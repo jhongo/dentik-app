@@ -1,8 +1,8 @@
-package com.prototipo.dentik.dominio.entidades;
+package com.prototipo.dentik.presentacion.dto.response;
 
 import java.time.LocalDate;
 
-public class Paciente {
+public class PacienteResponseDTO {
 
 	private int idPaciente;
 	private int idUsuario;
@@ -12,19 +12,6 @@ public class Paciente {
 	private String ciudad;
 	private String estadoProvincia;
 	private String codigoPostal;
-
-	public Paciente(int idPaciente, int idUsuario, LocalDate fechaNacimiento, String telefono, String direccion,
-			String ciudad, String estadoProvincia, String codigoPostal) {
-		super();
-		this.idPaciente = idPaciente;
-		this.idUsuario = idUsuario;
-		this.fechaNacimiento = fechaNacimiento;
-		this.telefono = telefono;
-		this.direccion = direccion;
-		this.ciudad = ciudad;
-		this.estadoProvincia = estadoProvincia;
-		this.codigoPostal = codigoPostal;
-	}
 
 	public int getIdPaciente() {
 		return idPaciente;
