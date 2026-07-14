@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dentik — Iniciar Sesión</title>
+
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/adminlte/css/adminlte.min.css}"/>
+    <link rel="stylesheet" th:href="@{/fontawesome/css/all.min.css}"/>
+</head>
+
+<body class="login-page bg-body-secondary">
+
+<div class="login-box">
+
+    <div class="login-logo">
+        <strong>
+            <i class="fas fa-tooth me-2"></i>Dentik
+        </strong>
+    </div>
+
+    <div class="card">
+        <div class="card-body login-card-body">
+
+            <p class="login-box-msg">Ingresa tus credenciales para continuar</p>
+             <p class="login-box-msg">Como prueba el correo y contrasena es admin</p>
+
+            <form id="loginForm">
+
+                <div class="input-group mb-3">
+                    <input type="text"
+                           name="correo"
+                           class="form-control"
+                           placeholder="Correo electrónico"
+                           required/>
+                    <div class="input-group-text">
+                        <span class="fas fa-envelope"></span>
+                    </div>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="password"
+                           name="contrasena"
+                           class="form-control"
+                           placeholder="Contraseña"
+                           required/>
+                    <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                    </div>
+                </div>
+
+                <div id="loginError" class="alert alert-danger d-none mt-2">
+                    Correo o contraseña incorrectos.
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-sign-in-alt me-1"></i> Ingresar
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/adminlte/js/adminlte.min.js}"></script>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const correo = document.querySelector('input[name="correo"]').value.trim();
+        const contrasena = document.querySelector('input[name="contrasena"]').value.trim();
+
+        if (correo === 'admin' && contrasena === 'admin') {
+            window.location.href = '/pacientes';
+        } else {
+            document.getElementById('loginError').classList.remove('d-none');
+        }
+    });
+</script>
+
+</body>
+</html>
+6

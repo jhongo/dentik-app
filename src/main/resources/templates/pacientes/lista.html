@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: html(content=~{::section}, pageTitle='Pacientes')}">
+<body>
+<section>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Listado de Pacientes</h3>
+            <div class="card-tools">
+                <a th:href="@{/pacientes/nuevo}" class="btn btn-primary btn-sm">
+                    <i class="fas fa-plus"></i> Nuevo Paciente
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Teléfono</th>
+                        <th>Ciudad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="paciente : ${pacientes}">
+                        <td th:text="${paciente.idPaciente}"></td>
+                        <td th:text="${paciente.telefono}"></td>
+                        <td th:text="${paciente.ciudad}"></td>
+                        <td>
+                            <a th:href="@{/pacientes/editar/{id}(id=${paciente.idPaciente})}"
+                               class="btn btn-warning btn-sm">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a th:href="@{/pacientes/eliminar/{id}(id=${paciente.idPaciente})}"
+                               class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>
