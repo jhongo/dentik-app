@@ -11,4 +11,13 @@ public interface IUsuarioUseCase {
 	List<Usuario> listarTodos();
 	void eliminar(int idUsuario);
 
+	// Registra un usuario validando duplicados y le asigna un rol por su nombre.
+	Usuario registrar(Usuario nuevoUsuario, String nombreRol);
+	Usuario actualizar(Usuario usuario);
+	Usuario buscarPorCorreo(String correo);
+	List<Usuario> buscarPorRol(String nombreRol);
+	Usuario asignarRol(int idUsuario, int idRol);
+	// Valida credenciales (correo + contrasena). Lanza excepcion si no coinciden.
+	Usuario autenticar(String correo, String contrasena);
+
 }

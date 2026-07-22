@@ -1,6 +1,8 @@
 package com.prototipo.dentik.dominio.entidades;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Usuario {
 
@@ -10,25 +12,16 @@ public class Usuario {
 	private String documento;
 	private String correo;
 	private String contrasena;
-	private String rol;
 	private String estado;
 	private LocalDateTime fechaRegistro;
 	private LocalDateTime ultimaSesion;
-
-	public Usuario(int idUsuario, String nombre, String apellido, String documento, String correo, String contrasena,
-			String rol, String estado, LocalDateTime fechaRegistro, LocalDateTime ultimaSesion) {
-		super();
-		this.idUsuario = idUsuario;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.documento = documento;
-		this.correo = correo;
-		this.contrasena = contrasena;
-		this.rol = rol;
-		this.estado = estado;
-		this.fechaRegistro = fechaRegistro;
-		this.ultimaSesion = ultimaSesion;
-	}
+	private LocalDate fechaNacimiento;
+	private String telefono;
+	private String direccion;
+	private String ciudad;
+	private String estadoProvincia;
+	private String codigoPostal;
+	private List<String> roles;
 
 	public int getIdUsuario() {
 		return idUsuario;
@@ -78,14 +71,6 @@ public class Usuario {
 		this.contrasena = contrasena;
 	}
 
-	public String getRol() {
-		return rol;
-	}
-
-	public void setRol(String rol) {
-		this.rol = rol;
-	}
-
 	public String getEstado() {
 		return estado;
 	}
@@ -108,6 +93,62 @@ public class Usuario {
 
 	public void setUltimaSesion(LocalDateTime ultimaSesion) {
 		this.ultimaSesion = ultimaSesion;
+	}
+
+	public LocalDate getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+
+	public String getEstadoProvincia() {
+		return estadoProvincia;
+	}
+
+	public void setEstadoProvincia(String estadoProvincia) {
+		this.estadoProvincia = estadoProvincia;
+	}
+
+	public String getCodigoPostal() {
+		return codigoPostal;
+	}
+
+	public void setCodigoPostal(String codigoPostal) {
+		this.codigoPostal = codigoPostal;
+	}
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}
 
 }

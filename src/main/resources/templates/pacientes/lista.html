@@ -18,6 +18,8 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Nombre</th>
+                        <th>Documento</th>
                         <th>Teléfono</th>
                         <th>Ciudad</th>
                         <th>Acciones</th>
@@ -25,15 +27,17 @@
                 </thead>
                 <tbody>
                     <tr th:each="paciente : ${pacientes}">
-                        <td th:text="${paciente.idPaciente}"></td>
+                        <td th:text="${paciente.idUsuario}"></td>
+                        <td th:text="${paciente.nombre + ' ' + paciente.apellido}"></td>
+                        <td th:text="${paciente.documento}"></td>
                         <td th:text="${paciente.telefono}"></td>
                         <td th:text="${paciente.ciudad}"></td>
                         <td>
-                            <a th:href="@{/pacientes/editar/{id}(id=${paciente.idPaciente})}"
+                            <a th:href="@{/pacientes/editar/{id}(id=${paciente.idUsuario})}"
                                class="btn btn-warning btn-sm">
                                 <i class="fas fa-edit"></i>
                             </a>
-                            <a th:href="@{/pacientes/eliminar/{id}(id=${paciente.idPaciente})}"
+                            <a th:href="@{/pacientes/eliminar/{id}(id=${paciente.idUsuario})}"
                                class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash"></i>
                             </a>

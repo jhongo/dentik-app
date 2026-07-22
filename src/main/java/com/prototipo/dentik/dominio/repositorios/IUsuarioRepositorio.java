@@ -12,4 +12,11 @@ public interface IUsuarioRepositorio {
 	List<Usuario> listarTodos();
 	void eliminar(int idUsuario);
 
+	Optional<Usuario> buscarPorCorreo(String correo);
+	Optional<Usuario> buscarPorDocumento(String documento);
+	boolean existePorCorreo(String correo);
+	boolean existePorDocumento(String documento);
+	List<Usuario> buscarPorRol(String nombreRol);
+	Usuario asignarRol(int idUsuario, int idRol);
+
 }

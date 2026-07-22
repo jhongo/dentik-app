@@ -1,6 +1,8 @@
 package com.prototipo.dentik.presentacion.dto.response;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class UsuarioResponseDTO {
 
@@ -9,10 +11,16 @@ public class UsuarioResponseDTO {
 	private String apellido;
 	private String documento;
 	private String correo;
-	private String rol;
 	private String estado;
 	private LocalDateTime fechaRegistro;
 	private LocalDateTime ultimaSesion;
+	private LocalDate fechaNacimiento;
+	private String telefono;
+	private String direccion;
+	private String ciudad;
+	private String estadoProvincia;
+	private String codigoPostal;
+	private List<String> roles;
 
 	public int getIdUsuario() {
 		return idUsuario;
@@ -54,14 +62,6 @@ public class UsuarioResponseDTO {
 		this.correo = correo;
 	}
 
-	public String getRol() {
-		return rol;
-	}
-
-	public void setRol(String rol) {
-		this.rol = rol;
-	}
-
 	public String getEstado() {
 		return estado;
 	}
@@ -84,6 +84,62 @@ public class UsuarioResponseDTO {
 
 	public void setUltimaSesion(LocalDateTime ultimaSesion) {
 		this.ultimaSesion = ultimaSesion;
+	}
+
+	public LocalDate getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(LocalDate fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+
+	public String getEstadoProvincia() {
+		return estadoProvincia;
+	}
+
+	public void setEstadoProvincia(String estadoProvincia) {
+		this.estadoProvincia = estadoProvincia;
+	}
+
+	public String getCodigoPostal() {
+		return codigoPostal;
+	}
+
+	public void setCodigoPostal(String codigoPostal) {
+		this.codigoPostal = codigoPostal;
+	}
+
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}
 
 }

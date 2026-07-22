@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: html(content=~{::section}, pageTitle='Usuarios')}">
+<body>
+<section>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Listado de Usuarios</h3>
+            <div class="card-tools">
+                <a th:href="@{/usuarios/nuevo}" class="btn btn-primary btn-sm">
+                    <i class="fas fa-plus"></i> Nuevo Usuario
+                </a>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Documento</th>
+                        <th>Correo</th>
+                        <th>Roles</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="usuario : ${usuarios}">
+                        <td th:text="${usuario.idUsuario}"></td>
+                        <td th:text="${usuario.nombre + ' ' + usuario.apellido}"></td>
+                        <td th:text="${usuario.documento}"></td>
+                        <td th:text="${usuario.correo}"></td>
+                        <td th:text="${usuario.roles != null ? #strings.listJoin(usuario.roles, ', ') : ''}"></td>
+                        <td th:text="${usuario.estado}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>
